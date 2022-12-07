@@ -1,0 +1,24 @@
+.card {
+    margin-bottom: 2.5rem;
+}
+
+.card--meta {
+    font-size: 0.52rem;
+    font-family: var(--font-mono);
+    /* text-transform: uppercase; */
+    opacity: 0.6;
+    margin: 0;
+}
+
+.card--title {
+    margin: 0;
+}
+
+.card--title-link {
+    color: currentColor;
+    text-decoration: none;
+}
+
+.card--excerpt {
+    margin: 0.8rem 0;
+}

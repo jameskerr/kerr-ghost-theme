@@ -14,57 +14,22 @@
 
 </head>
 <body class="{{body_class}}">
-<div class="gh-viewport">
-
-<header id="gh-head" class="gh-head">
-    <nav class="gh-head-inner gh-container">
-
-        <div class="gh-head-brand">
-            <a class="gh-head-logo" href="{{@site.url}}">
-                {{#if @site.logo}}
-                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
-            </a>
-            <a class="gh-burger" role="button">
-                <div class="gh-burger-box">
-                    <div class="gh-burger-inner"></div>
-                </div>
-            </a>
-        </div>
-        <div class="gh-head-menu">
-            {{navigation}}
-        </div>
-        <div class="gh-head-actions">
-            <div class="gh-head-actions-list">
-                {{#if @site.facebook}}
-                <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                {{/if}}
-                {{#if @site.twitter}}
-                <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                {{/if}}
-                <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
-            </div>
-        </div>
-    </nav>
+<div class="site">
+<header class="header">
+        <a class="header--site-link" href="{{@site.url}}">
+            <h1 class="header--site-name">{{@site.title}}</h1>
+        </a>
+        <hr class="header--divider"/>
+        <div class="header--site-nav">{{navigation}}</div>
 </header>
 
-<main class="gh-main">
-
+<main>
     {{{body}}}
-    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
-
 </main>
 
-<footer class="gh-foot">
-    <div class="gh-container">
-        <div class="gh-foot-menu">
-            {{navigation}}
-        </div>
-        <div class="gh-foot-meta">
-            Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-        </div>
+<footer class="footer">
+    <div class="footer--site-nav">
+        {{navigation}}
     </div>
 </footer>
 
@@ -92,6 +57,7 @@ $(document).ready(function () {
 
 {{#is "post, page"}}
 <script src="{{asset "built/jquery.fitvids.js"}}"></script>
+<script src="{{asset "built/prism.js"}}"></script>
 <script>
 var images = document.querySelectorAll('.kg-gallery-image img');
 images.forEach(function (image) {

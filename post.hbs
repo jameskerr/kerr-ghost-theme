@@ -2,10 +2,10 @@
 
 {{#post}}
 
-<article class="gh-article {{post_class}}">
+<article class="wrap {{post_class}}">
 
     <header class="gh-header gh-canvas">
-        <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+        <div class="gh-post-meta"><time datetime="{{date format="MMM D, YYYY"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</div>
         <h1 class="gh-title">{{title}}</h1>
 
         {{#if custom_excerpt}}
@@ -51,7 +51,7 @@
 
 </article>
 
-<aside class="gh-readmore">
+<aside class="wrap">
     <div class="gh-readmore-inner gh-container">
         <div class="gh-readmore-next">
             {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
